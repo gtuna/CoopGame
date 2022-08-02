@@ -18,7 +18,8 @@ ASCharacter::ASCharacter()
 	SpringArmComponent->bUsePawnControlRotation = true;
 	SpringArmComponent->SetupAttachment(RootComponent);
 
-	GetMovementComponent()->GetNavAgentPropertiesRef().bCanCrouch = true;
+    ACharacter::GetMovementComponent()->GetNavAgentPropertiesRef().bCanCrouch = true;
+    ACharacter::GetMovementComponent()->GetNavAgentPropertiesRef().bCanJump = true;
 	
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComponent"));
 	CameraComponent->SetupAttachment(SpringArmComponent);
@@ -73,5 +74,7 @@ void ASCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ASCharacter::BeginCrouch);
 	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &ASCharacter::EndCrouch);
+
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 }
 

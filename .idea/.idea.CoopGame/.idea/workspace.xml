@@ -10,6 +10,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1e45af1a-1af5-49f8-982c-5ada87328b75" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoopGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoopGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/AnimStarterPack/UE4ASP_HeroTPP_AnimBlueprint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AnimStarterPack/UE4ASP_HeroTPP_AnimBlueprint.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/CoopGame/Private/SCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoopGame/Private/SCharacter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -264,7 +266,7 @@
       <workItem from="1659424516881" duration="889000" />
       <workItem from="1659425461849" duration="744000" />
       <workItem from="1659427209559" duration="772000" />
-      <workItem from="1659435537965" duration="2535000" />
+      <workItem from="1659435537965" duration="3825000" />
     </task>
     <servers />
   </component>
