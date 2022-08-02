@@ -54,7 +54,7 @@ void ASCharacter::EndCrouch()
 }
 
 // Called every frame
-void ASCharacter::Tick(float DeltaTime)
+void ASCharacter::Tick(float DeltaTime) 
 {
 	Super::Tick(DeltaTime);
 
