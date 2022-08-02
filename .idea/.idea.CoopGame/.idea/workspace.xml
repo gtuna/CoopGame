@@ -10,10 +10,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1e45af1a-1af5-49f8-982c-5ada87328b75" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoopGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoopGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Map.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Map_BuiltData.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/PlayerPawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/PlayerPawn.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/P_TestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/P_TestMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/CoopGame/Private/SCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoopGame/Private/SCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/CoopGame/Public/SCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/CoopGame/Public/SCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +264,8 @@
       <option name="presentableId" value="Default" />
       <updated>1659419075805</updated>
       <workItem from="1659419103259" duration="1303000" />
-      <workItem from="1659421115629" duration="1268000" />
+      <workItem from="1659421115629" duration="1876000" />
+      <workItem from="1659424516881" duration="889000" />
     </task>
     <servers />
   </component>
