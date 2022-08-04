@@ -34,7 +34,21 @@ protected:
 	UCameraComponent* CameraComponent;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	USpringArmComponent* SpringArmComponent;  
+	USpringArmComponent* SpringArmComponent;
+
+	bool bWantsToZoom;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Player")
+	float ZoomedFOV;
+
+	float DefaultFOV;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Player", meta= ( ClampMin = 0.0, ClampMax = 100 ))
+	float ZoomedInterpSpeed;
+
+	void BeginZoom();
+	
+	void EndZoom();
 	
 public:	
 	// Called every frame
