@@ -41,4 +41,7 @@ protected:
 	UParticleSystem* TracerEffect;
 
 	void PlayFireEffects(FVector TracerEndPoint);
+
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+	TSubclassOf<UCameraShakeBase> FireCamShake;
 };
