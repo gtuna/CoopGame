@@ -3,11 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SWeapon.h"
 #include "GameFramework/Character.h"
 #include "SCharacter.generated.h"
 
 class UCameraComponent;
 class USpringArmComponent;
+class ASWeapon;
 
 UCLASS()
 class COOPGAME_API ASCharacter : public ACharacter
@@ -46,9 +48,19 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Player", meta= ( ClampMin = 0.0, ClampMax = 100 ))
 	float ZoomedInterpSpeed;
 
+	UPROPERTY(VisibleDefaultsOnly, Category = "Player")
+	FName WeaponAttachSocketName;
+
 	void BeginZoom();
 	
 	void EndZoom();
+
+	ASWeapon* CurrentWeapon;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Player")
+	TSubclassOf<ASWeapon> StarterWeaponClass;
+	
+	void Fire();
 	
 public:	
 	// Called every frame
