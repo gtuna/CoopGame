@@ -43,10 +43,15 @@ void ASWeapon::BeginPlay()
 }
 
 
-void ASWeapon::Fire()
+void ASWeapon::Fire()	
 {
 	// Trace the world, from pawn eyes to crosshair location
 
+	if (GetLocalRole() < ROLE_Authority)
+	{
+		ServerFire();
+	}
+	
 	AActor* MyOwner = GetOwner();
 	if (MyOwner)
 	{
@@ -111,6 +116,16 @@ void ASWeapon::Fire()
 
 		LastFireTime = GetWorld()->TimeSeconds;
 	}
+}
+
+void ASWeapon::ServerFire_Implementation()
+{
+	Fire();	
+}
+
+bool ASWeapon::ServerFire_Validate()
+{
+	return true;
 }
 
 
