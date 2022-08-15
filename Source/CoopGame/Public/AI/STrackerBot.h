@@ -32,6 +32,9 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly, Category = "Components")
 	USHealthComponent* HealthComp;
 	
+	UPROPERTY(EditDefaultsOnly, Category = "TrackerBot")
+	UParticleSystem* ExplosionEffect;
+
 	FVector GetNextPathPoint();
 
 	FVector NextPathPoint;
@@ -46,6 +49,16 @@ protected:
 	float RequiredDistanceToTarget;
 
 	UMaterialInstanceDynamic* MatInstc;
+
+	void SelfDestruct();
+
+	bool bExploded;
+
+	UPROPERTY(EditDefaultsOnly, Category = "TrackerBot")
+	float ExplosionRadius;
+
+	UPROPERTY(EditDefaultsOnly, Category = "TrackerBot")
+	float ExplosionDamage;
 public:
 	
 	virtual void Tick(float DeltaSeconds) override;

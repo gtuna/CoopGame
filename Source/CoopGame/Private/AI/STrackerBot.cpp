@@ -3,7 +3,6 @@
 
 #include "AI/STrackerBot.h"
 
-#include "DrawDebugHelpers.h"
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
 #include "NavigationPath.h"
@@ -24,6 +23,10 @@ ASTrackerBot::ASTrackerBot()
 	bUseVelocityChange = false;
 	MovementForce = 1000;
 	RequiredDistanceToTarget = 100;
+	bExploded = false;
+
+	ExplosionRadius = 200;
+	ExplosionDamage = 40;
 }
 
 // Called when the game starts or when spawned
@@ -38,7 +41,6 @@ void ASTrackerBot::HandleTakeDamage(USHealthComponent* OwningHealthComp, float H
 	const UDamageType* DamageType, AController* InstigatedBy, AActor* DamageCauser)
 {
 	// explode on hitpoints = 0
-	// @TODO: pulse the material on hit
 
 	if (MatInstc == nullptr)
 	{
@@ -50,6 +52,11 @@ void ASTrackerBot::HandleTakeDamage(USHealthComponent* OwningHealthComp, float H
 	}
 
 	UE_LOG(LogTemp, Log, TEXT("Health %f of %s"), (Health), *GetName());
+
+	if (Health <= 0.f)
+	{
+		SelfDestruct();
+	}
 	
 }
 
@@ -69,6 +76,25 @@ FVector ASTrackerBot::GetNextPathPoint()
 	// failed to find path
 	return GetActorLocation();
 	
+}
+
+void ASTrackerBot::SelfDestruct()
+{
+	if (bExploded)
+	{
+		return;
+	}
+	bExploded = true;
+	
+	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ExplosionEffect, GetActorLocation());
+
+	TArray<AActor*> IgnoredActors;
+	IgnoredActors.Add(this);
+	
+	UGameplayStatics::ApplyRadialDamage(this,  ExplosionDamage, GetActorLocation(), ExplosionRadius,
+		nullptr, IgnoredActors, this, GetInstigatorController());
+
+	Destroy();
 }
 
 void ASTrackerBot::Tick(float DeltaSeconds)
