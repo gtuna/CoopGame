@@ -46,7 +46,10 @@ void ASCharacter::BeginPlay()
 	
 	DefaultFOV = CameraComp->FieldOfView;
 
-	HealthComp->OnHealthChanged.AddDynamic(this, &ASCharacter::OnHealthChanged);
+	if (HealthComp)
+	{
+		HealthComp->OnHealthChanged.AddDynamic(this, &ASCharacter::OnHealthChanged);
+	}
 
 	if (GetLocalRole() == ROLE_Authority)
 	{
