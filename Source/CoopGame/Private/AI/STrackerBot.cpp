@@ -40,6 +40,15 @@ void ASTrackerBot::HandleTakeDamage(USHealthComponent* OwningHealthComp, float H
 	// explode on hitpoints = 0
 	// @TODO: pulse the material on hit
 
+	if (MatInstc == nullptr)
+	{
+		MatInstc = MeshComp->CreateAndSetMaterialInstanceDynamicFromMaterial(0, MeshComp->GetMaterial(0));
+	}
+	if (MatInstc)
+	{
+		MatInstc->SetScalarParameterValue("LastTimeDamageTaken", GetWorld()->TimeSeconds);
+	}
+
 	UE_LOG(LogTemp, Log, TEXT("Health %f of %s"), (Health), *GetName());
 	
 }

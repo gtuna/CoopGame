@@ -44,6 +44,8 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "TrackerBot")
 	float RequiredDistanceToTarget;
+
+	UMaterialInstanceDynamic* MatInstc;
 public:
 	
 	virtual void Tick(float DeltaSeconds) override;
